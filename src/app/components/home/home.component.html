@@ -1,0 +1,100 @@
+
+<!-- Navigation Bar -->
+<header class="navbar">
+    <div class="logo">
+        <img src="assets/img/image.png" alt="MindMend Logo" class="logo-img">
+        <h1>MindMend</h1>
+    </div>
+    <nav>
+        <ul class="nav-links">
+            <li><a routerLink="">Virtual Therapy</a></li>
+            <li><a routerLink="">Mood Tracking</a></li>
+            <li><a routerLink="">AI Support</a></li>
+            <button class="sign-in-btn" (click)="navigateToLogin()">Sign In</button>
+        </ul>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <h2>Welcome to MindMend</h2>
+    <p>Your comprehensive mental health support system. Professional care, mood tracking, and AI-driven emotional support - all in one place.</p>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+    <div class="feature-box" *ngFor="let feature of features">
+        <img [src]="feature.icon" [alt]="feature.title + ' Icon'" class="feature-icon">
+        <h3>{{ feature.title }}</h3>
+        <p>{{ feature.description }}</p>
+    </div>
+</section>
+
+<!-- Why Choose Section -->
+<section class="why-choose">
+    <div class="container">
+        <h2>Why Choose MindMend?</h2>
+        <div class="why-choose-content">
+            <div class="image-container">
+                <img src="assets/img/why.png" alt="Why Choose MindMend">
+            </div>
+            <div class="content-container">
+                <ul>
+                    <li *ngFor="let reason of reasons">
+                        <div class="icon">
+                            <img [src]="reason.icon" alt="Icon">
+                        </div>
+                        <div>
+                            <h3>{{ reason.title }}</h3>
+                            <p>{{ reason.description }}</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Logo and Description -->
+        <div class="footer-column">
+            <div class="footer-logo">
+                <img src="assets/img/foot.png" alt="MindMend Logo">
+                <h2>MindMend</h2>
+            </div>
+            <p>Empowering mental wellness through technology and professional support.</p>
+        </div>
+        <!-- Services -->
+        <div class="footer-column">
+            <h3>Services</h3>
+            <ul>
+                <li><a routerLink="/virtual-therapy">Virtual Therapy</a></li>
+                <li><a routerLink="/mood-tracking">Mood Tracking</a></li>
+                <li><a routerLink="/ai-support">AI Support</a></li>
+            </ul>
+        </div>
+        <!-- Company -->
+        <div class="footer-column">
+            <h3>Company</h3>
+            <ul>
+                <li><a routerLink="/about-us">About Us</a></li>
+                <li><a routerLink="/contact">Contact</a></li>
+                <li><a routerLink="/careers">Careers</a></li>
+            </ul>
+        </div>
+        <!-- Social Media -->
+        <div class="footer-column">
+            <h3>Connect With Us</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2024 MindMend. All rights reserved.</p>
+    </div>
+</footer>

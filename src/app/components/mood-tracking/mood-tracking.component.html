@@ -1,0 +1,104 @@
+<header class="navbar">
+    <div class="logo">
+      <img src="assets/img/image.png" alt="MindMend Logo" class="logo-img">
+      <h1>MindMend</h1>
+    </div>
+    <nav>
+        <ul class="nav-links">
+          <li><a routerLink="/virtual">Virtual Therapy</a></li>
+          <li><a routerLink="/mood-tracking">Mood Tracking</a></li>
+          <li><a routerLink="#">AI Support</a></li>
+          <button class="sign-in-btn" (click)="signOut()">Sign Out</button>
+        </ul>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <h1>Mood Tracking</h1>
+    <p>Track your emotional well-being and identify patterns</p>
+  
+    <div class="mood-tracker">
+      <div class="mood-input">
+        <h2>How are you feeling today?</h2>
+        <div class="mood-options">
+          <button class="mood-button happy" (click)="logMood('Happy')">😊 Happy</button>
+          <button class="mood-button neutral" (click)="logMood('Neutral')">😐 Neutral</button>
+          <button class="mood-button sad" (click)="logMood('Sad')">☹️ Sad</button>
+          <button class="mood-button anxious" (click)="logMood('Anxious')">😰 Anxious</button>
+          <button class="mood-button depressed" (click)="logMood('Depressed')">😔 Depressed</button>
+        </div>
+        <textarea placeholder="How was your day? What made you feel this way?" [(ngModel)]="moodNote"></textarea>
+        <button class="log-button" (click)="saveMood()">Log Mood</button>
+      </div>
+  
+      <div class="mood-history">
+        <h2>Your Mood History</h2>
+        <canvas id="mood-chart"></canvas>
+      </div>
+    </div>
+  </div>
+  
+  <div class="mood-insights">
+    <h2>Mood Insights</h2>
+    <div class="insights">
+      <div class="insight-card">
+        <div class="icon">☀️</div>
+        <h3>Morning Moods</h3>
+        <p>Your mood tends to be highest in the morning hours</p>
+      </div>
+      <div class="insight-card">
+        <div class="icon">🌙</div>
+        <h3>Evening Patterns</h3>
+        <p>Consider relaxation techniques for better evening moods</p>
+      </div>
+      <div class="insight-card">
+        <div class="icon">📅</div>
+        <h3>Weekly Overview</h3>
+        <p>Your mood has improved by 20% this week</p>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="footer">
+    <div class="footer-container">
+        <!-- Logo and Description -->
+        <div class="footer-column">
+            <div class="footer-logo">
+                <img src="assets/img/footer-logo.png" alt="MindMend Logo">
+                <h2>MindMend</h2>
+            </div>
+            <p>Empowering mental wellness through technology and professional support.</p>
+        </div>
+        <!-- Services -->
+        <div class="footer-column">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="#">Virtual Therapy</a></li>
+                <li><a href="#">Mood Tracking</a></li>
+                <li><a href="#">AI Support</a></li>
+            </ul>
+        </div>
+        <!-- Company -->
+        <div class="footer-column">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+        </div>
+        <!-- Social Media -->
+        <div class="footer-column">
+            <h3>Connect With Us</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2024 MindMend. All rights reserved.</p>
+    </div>
+</footer>
+  

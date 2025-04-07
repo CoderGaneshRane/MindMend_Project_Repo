@@ -1,0 +1,109 @@
+<!-- Navigation Bar -->
+<header class="navbar">
+    <div class="logo">
+      <img src="assets/img/image.png" alt="MindMend Logo" class="logo-img" />
+      <h1>MindMend</h1>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a routerLink="/virtual">Virtual Therapy</a></li>
+        <li><a routerLink="/mood-tracking">Mood Tracking</a></li>
+        <li><a routerLink="#">AI Support</a></li>
+        <button class="sign-in-btn" (click)="signOut()">Sign Out</button>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Booking Section -->
+  <header>
+    <nav>
+      <h1>Virtual Therapy Sessions</h1>
+      <p style="color: black;">Connect with licensed therapists from the comfort of your home</p>
+    </nav>
+  </header>
+  
+  <main>
+    <div class="booking-container">
+      <div class="form-container">
+        <h2>Book Your Session</h2>
+        <label for="date">Select Date</label>
+        <input type="date" id="date" [(ngModel)]="selectedDate" />
+        <label for="time">Select Time</label>
+        <select id="time" [(ngModel)]="selectedTime">
+          <option value="">Choose a time slot</option>
+          <option *ngFor="let time of timeSlots" [value]="time">{{ time }}</option>
+        </select>
+      </div>
+      <div class="session-info">
+        <h3>Session Information</h3>
+        <ul>
+          <li><span class="icon">📹</span> 45-minute video session</li>
+          <li><span class="icon">🔍</span> Personalized therapist matching</li>
+        </ul>
+        <button class="btn" (click)="bookSession()">Book Session</button>
+      </div>
+    </div>
+  </main>
+  
+  <!-- Therapist Section -->
+  <div class="therapists-section">
+    <h2>Available Therapists</h2>
+    <div class="therapists-container">
+      <div
+        class="therapist-card"
+        *ngFor="let therapist of therapists"
+      >
+        <img [src]="therapist.image" [alt]="therapist.name" />
+        <h3>{{ therapist.name }}</h3>
+        <p>{{ therapist.specialization }}</p>
+        <p><strong>Available Today:</strong></p>
+        <div class="availability">
+          <span *ngFor="let time of therapist.availableTimes">{{ time }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-container">
+        <!-- Logo and Description -->
+        <div class="footer-column">
+            <div class="footer-logo">
+                <img src="assets/img/foot.png" alt="MindMend Logo">
+                <h2>MindMend</h2>
+            </div>
+            <p>Empowering mental wellness through technology and professional support.</p>
+        </div>
+        <!-- Services -->
+        <div class="footer-column">
+            <h3>Services</h3>
+            <ul>
+                <li><a routerLink="/virtual-therapy">Virtual Therapy</a></li>
+                <li><a routerLink="/mood-tracking">Mood Tracking</a></li>
+                <li><a routerLink="/ai-support">AI Support</a></li>
+            </ul>
+        </div>
+        <!-- Company -->
+        <div class="footer-column">
+            <h3>Company</h3>
+            <ul>
+                <li><a routerLink="/about-us">About Us</a></li>
+                <li><a routerLink="/contact">Contact</a></li>
+                <li><a routerLink="/careers">Careers</a></li>
+            </ul>
+        </div>
+        <!-- Social Media -->
+        <div class="footer-column">
+            <h3>Connect With Us</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2024 MindMend. All rights reserved.</p>
+    </div>
+</footer>
